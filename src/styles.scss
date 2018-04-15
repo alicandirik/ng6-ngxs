@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,400,700');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+@import './sass/variables';
+@import './sass/base';
+@import './sass/theming';
+@import './sass/navigation';
+@import './sass/spinner';
+@import './sass/snackbar';
+
+.u-mb-xs { margin-bottom: 1rem; }
+.u-mb-sm { margin-bottom: 2rem; }
+.u-mb-md { margin-bottom: 3rem; }
+.u-mb-lg { margin-bottom: 4rem; }
+.u-mb-xl { margin-bottom: 5rem; }
+
+.u-mt-xs { margin-top: 1rem; }
+.u-mt-sm { margin-top: 2rem; }
+.u-mt-md { margin-top: 3rem; }
+.u-mt-lg { margin-top: 4rem; }
+.u-mt-xl { margin-top: 5rem; }
+
+.text-right { text-align: right; }
+.text-centered { text-align: center; }
+
+.icon {
+  height: 3rem;
+  width: 3rem;
+  fill: currentColor;
+
+  &--sm {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  &--lg {
+    height: 5rem;
+    width: 5rem;
+  }
+}

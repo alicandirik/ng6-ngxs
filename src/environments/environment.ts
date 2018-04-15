@@ -4,7 +4,15 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyApZubusyEwB_MjamNlHb-0OKFuTMxKKOg',
+    authDomain: 'jovisco-invoicing.firebaseapp.com',
+    databaseURL: 'https://jovisco-invoicing.firebaseio.com',
+    projectId: 'jovisco-invoicing',
+    storageBucket: 'jovisco-invoicing.appspot.com',
+    messagingSenderId: '539994899339'
+  }
 };
 
 /*
