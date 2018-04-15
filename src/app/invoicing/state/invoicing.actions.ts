@@ -1,4 +1,4 @@
 // ACTIONS
-export class ClearState {
+export class ClearInvoicingState {
   static type = '[invoicing] init';
 }

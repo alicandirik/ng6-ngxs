@@ -2,7 +2,7 @@
 // ACTIONS
 import {NumberRangeDataModel} from '../models/number-range-data.model';
 
-export class InitState {
+export class ClearNumberRangesState {
   static type = '[invoicing] number-ranges init';
 }
 

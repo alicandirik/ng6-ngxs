@@ -2,7 +2,7 @@ import {ReceiverDataModel} from '../models/receiver-data.model';
 
 
 // ACTIONS
-export class InitState {
+export class ClearReceiversState {
   static type = '[invoicing] receivers init';
 }
 

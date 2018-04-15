@@ -1,11 +1,10 @@
 import {Action, Select, State, StateContext, Store} from '@ngxs/store';
 import {ReceiverDataModel} from '../models/receiver-data.model';
 import {map, mergeMap, take} from 'rxjs/internal/operators';
-import {ClearState} from './invoicing.actions';
 import {AppState} from '../../state/app.state';
 import {Observable} from 'rxjs';
 import {UserModel} from '../../shared/models/user.model';
-import {AddedReceiver, ModifiedReceiver, QueryReceivers, RemovedReceiver} from './receivers.actions';
+import {AddedReceiver, ClearReceiversState, ModifiedReceiver, QueryReceivers, RemovedReceiver} from './receivers.actions';
 import {ReceiversApiService} from '../services/receivers-api.service';
 
 export interface ReceiversStateModel {
@@ -29,11 +28,16 @@ export class ReceiversState {
 
   // DISPATCH query on startup
   onInit() {
-    this.authUser$.pipe(take(1)).subscribe(authUser => this.store.dispatch([new ClearState(), new QueryReceivers(authUser.organization)]));
+    /*
+    this.authUser$.pipe(take(1)).subscribe(authUser => this.store.dispatch([
+      new ClearReceiversState(),
+      new QueryReceivers(authUser.organization)]));
+      */
+    this.store.dispatch(new ClearReceiversState());
   }
 
   // COMMANDS
-  @Action(ClearState)
+  @Action(ClearReceiversState)
   clear(sc: StateContext<ReceiversStateModel>) {
     sc.setState(defaults);
   }

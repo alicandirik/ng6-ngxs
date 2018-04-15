@@ -10,11 +10,11 @@ import { ContractDetailsComponent } from './contracts/contract-details/contract-
 import { InvoiceMasterComponent } from './invoices/invoice-master/invoice-master.component';
 import { InvoiceDetailsComponent } from './invoices/invoice-details/invoice-details.component';
 import { NumberRangesApiService } from './services/number-ranges-api.service';
-import {NgxsModule} from '@ngxs/store';
-import {InvoicingState} from './state/invoicing.state';
-import {NumberRangesState} from './state/number-ranges.state';
-import {ReceiversState} from './state/receivers.state';
-import {ReceiversApiService} from './services/receivers-api.service';
+import { NgxsModule } from '@ngxs/store';
+import { InvoicingState } from './state/invoicing.state';
+import { NumberRangesState } from './state/number-ranges.state';
+import { ReceiversState } from './state/receivers.state';
+import { ReceiversApiService } from './services/receivers-api.service';
 
 @NgModule({
   imports: [

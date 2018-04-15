@@ -1,9 +1,14 @@
 import {Action, State, StateContext, Store} from '@ngxs/store';
 import {NumberRangeDataModel} from '../models/number-range-data.model';
-import {AddedNumberRange, ModifiedNumberRange, QueryNumberRanges, RemovedNumberRange} from './number-ranges.actions';
+import {
+  AddedNumberRange,
+  ClearNumberRangesState,
+  ModifiedNumberRange,
+  QueryNumberRanges,
+  RemovedNumberRange
+} from './number-ranges.actions';
 import {map, mergeMap} from 'rxjs/internal/operators';
 import {NumberRangesApiService} from '../services/number-ranges-api.service';
-import {ClearState} from './invoicing.actions';
 
 export interface NumberRangesStateModel {
   isLoading: boolean;
@@ -22,12 +27,12 @@ export class NumberRangesState {
 
   // DISPATCH query on startup
   onInit() {
-    this.store.dispatch([new ClearState(), new QueryNumberRanges()]);
+    // this.store.dispatch([new ClearNumberRangesState(), new QueryNumberRanges()]);
+    this.store.dispatch(new ClearNumberRangesState());
   }
 
-
   // COMMANDS
-  @Action(ClearState)
+  @Action(ClearNumberRangesState)
   clear(sc: StateContext<NumberRangesStateModel>) {
     sc.setState(defaults);
   }
