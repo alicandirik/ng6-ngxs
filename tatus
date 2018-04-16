@@ -1,0 +1,35 @@
+[33mcommit 4b1e977754ebab2b5860daeca0af2a70af7cf02b[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: joheiss <josef.heiss@jovisco.de>
+Date:   Mon Apr 16 19:29:51 2018 +0200
+
+    logout-plugin
+
+[33mcommit 9b7356bcc1d1dffb62988649714510378acda7eb[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: joheiss <josef.heiss@jovisco.de>
+Date:   Sun Apr 15 19:24:08 2018 +0200
+
+    wo env
+
+[33mcommit 187a7296a113734859875cdaeb9ae861038f7b97[m[33m ([m[1;31mgithub/master[m[33m)[m
+Author: joheiss <josef.heiss@jovisco.de>
+Date:   Sun Apr 15 18:57:59 2018 +0200
+
+    gitignore
+
+[33mcommit e2a3e47056b38bde3c5d701fd952a11773477cf9[m
+Author: joheiss <josef.heiss@jovisco.de>
+Date:   Sun Apr 15 18:49:54 2018 +0200
+
+    initial load at main feature component
+
+[33mcommit ee82d6f9bac24d95748f06224f58e9503d22206a[m
+Author: joheiss <josef.heiss@jovisco.de>
+Date:   Sun Apr 15 12:10:16 2018 +0200
+
+    start ngxs
+
+[33mcommit 795c776ad4842c5dc0ed57e48e0665e4c739e462[m
+Author: joheiss <josef.heiss@jovisco.de>
+Date:   Wed Apr 11 14:54:48 2018 +0200
+
+    initial commit
