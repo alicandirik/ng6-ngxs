@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgxsModule } from '@ngxs/store';
+import {NGXS_PLUGINS, NgxsModule} from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 import { NgxsStoragePluginModule } from '@ngxs/storage-plugin';
 import { NgxsFormPluginModule } from '@ngxs/form-plugin';
@@ -31,6 +31,7 @@ import {UiService} from './shared/services/ui-service';
 import { ConfirmationPopupComponent } from './shared/popups/confirmation-popup/confirmation-popup.component';
 import {AuthorizationGuard} from './auth/guards/authorization.guard';
 import {AuthenticationGuard} from './auth/guards/authentication.guard';
+import {logoutPlugin} from './plugins/logout-plugin';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import {AuthenticationGuard} from './auth/guards/authentication.guard';
     UiService,
     AuthenticationGuard,
     AuthorizationGuard,
+    { provide: NGXS_PLUGINS, useValue: logoutPlugin, multi: true }
   ],
   entryComponents: [
     ConfirmationPopupComponent

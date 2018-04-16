@@ -27,7 +27,7 @@ export class InvoicingComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.store.dispatch(new ClearInvoicingState());
+    // this.store.dispatch(new ClearInvoicingState());
   }
 
 }

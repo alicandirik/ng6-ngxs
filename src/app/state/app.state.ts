@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 import {AuthService} from '../auth/services/auth.service';
 import {Navigate} from './router.actions';
 import {
-  CheckSession, ClearState, DisplayConfirmation,
+  CheckSession, ClearAppState, DisplayConfirmation,
   DisplayMessage,
   LoginFailed,
   LoginRedirect,
@@ -49,11 +49,11 @@ export class AppState {
 
   // DISPATCH CheckSession on startup
   onInit() {
-    this.store.dispatch([ new ClearState(), new CheckSession()]);
+    this.store.dispatch([ new ClearAppState(), new CheckSession()]);
   }
 
   // COMMANDS
-  @Action(ClearState)
+  @Action(ClearAppState)
   clear(sc: StateContext<AppStateModel>) {
     sc.setState(defaults);
   }
@@ -87,7 +87,8 @@ export class AppState {
 
   @Action(Logout)
   logout(sc: StateContext<AppStateModel>) {
-    sc.patchState({ isPending: true });
+    // use setState after state has been totally cleared in plugin
+    sc.setState({ authUser: null, message: null, isPending: false });
     this.authService.logout()
       .then(() => sc.dispatch(new LogoutSuccess()));
   }
@@ -133,7 +134,7 @@ export class AppState {
 
   @Action(LogoutSuccess)
   setUserStateOnLogout(sc: StateContext<AppStateModel>) {
-    sc.patchState({ authUser: undefined, isPending: false });
+    // sc.patchState({ authUser: undefined, isPending: false });
     sc.dispatch([
       new LoginRedirect(),
       new DisplayMessage(this.messages.getMessage('user-logged-out'))

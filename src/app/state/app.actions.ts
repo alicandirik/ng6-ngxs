@@ -3,7 +3,7 @@ import {MessageModel} from '../shared/models/message.model';
 import {ConfirmationPopupModel} from '../shared/models/confirmation-popup.model';
 
 // ACTIONS
-export class ClearState {
+export class ClearAppState {
   static type = '[app] init';
 }
 
